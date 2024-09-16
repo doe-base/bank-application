@@ -6,6 +6,8 @@ node_modules/
 # testing
 /coverage
 
+.env
+
 # next.js
 .next/
 /out/
@@ -34,6 +36,6 @@ next-env.d.ts
 
 # other files I don't want in github
 server/queries
-server/serversql_table_map.md
+server/sql_table_map.md
 todos.txt
 old-version/
