@@ -1,0 +1,26 @@
+
+
+@keyframes fadeup {
+    from {
+        transform: translateY(0px);
+    }
+    to {
+        transform: translateY(-10px);
+    }
+}
+
+
+.somethingwrong{
+    display: block !important;
+    z-index: 20000;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    animation: fadeup 1.5s ease-in-out forwards;
+    animation-duration: 1.5s;
+    animation-delay: 0.1s;
+    animation-fill-mode: both;
+}
+.somethingwrongNone{
+    display: none;
+}

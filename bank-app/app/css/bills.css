@@ -1,0 +1,80 @@
+.bill-manage-form-heading{
+    font-weight: 600;
+    letter-spacing: .25px;
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: #37474f;
+    margin-top: 1.5rem !important;
+}
+
+.bills-payment-main-content{
+    width: 100%;
+    padding: 0 34px 100px;
+}
+.bills-payment-main-content > h2{
+    text-transform: uppercase;
+    color: #000;
+    font-size: 12px;
+}
+
+
+.bp-categories__categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(124px, 1fr));
+    grid-gap: 16px;
+    gap: 16px;
+    margin-top: 32px;
+}
+.bp-categories__categories .bp-category-box {
+    height: 100%;
+    min-height: 136px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: 1px solid #eee;
+    border-radius: 8px;
+
+    color: #007bff;
+    text-decoration: none;
+    background-color: initial;
+}
+.bp-categories__categories .bp-category-box:hover{
+    border-color: #d1a23c !important;
+}
+.bp-categories__categories .bp-category-box h3 {
+    font-size: 12px;
+    color: #000;
+    margin: 16px 0 0;
+    text-align: center;
+}
+
+.bp-categories__categories .bills-icon-holder{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #d1a23c;
+}
+
+
+.bills-dropdown-button-xxx{
+    padding: 0.7rem;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    transition: all 0.15s linear;
+}
+.bills-dropdown-button-xxx-p{
+    transition: all 0.15s linear;
+}
+.bills-dropdown-button-xxx:hover .bills-dropdown-button-xxx-p{
+    padding-left: 1rem;
+}
+
+
+.justdisplaynone{
+    display: none !important;
+}

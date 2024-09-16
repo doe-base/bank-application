@@ -1,0 +1,103 @@
+/* Holiday Schedule Table */
+
+#holiday-data {
+    border-top: 1px solid #dfdfdf;
+    border-bottom: 1px solid #dfdfdf;
+}
+.ratetable, .inception {
+    width: 100%;
+    margin: 0;
+}
+table {
+    display: table;
+    border-collapse: separate;
+    box-sizing: border-box;
+    text-indent: initial;
+    border-spacing: 0;
+    border-color: gray;
+}
+
+.ratetable tr:nth-child(odd) {
+    background: #eee;
+}
+.twoCol tr td:nth-child(1) {
+    width: 47%;
+}
+.ratetable td:first-child {
+    text-align: left;
+}
+
+.ratetable td {
+    border: 1px solid rgba(0, 0, 0, .1);
+    border-top: 0;
+    border-bottom: 0;
+    padding: 12px 12px;
+    color: rgb(85, 85, 85);
+}
+.ratetable td {
+    font-size: 1rem;
+}
+.twoCol tr td:nth-child(2) {
+    width: 26.5%;
+    text-align: center;
+    border-left: 0;
+}
+
+
+
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    5% {
+        transform: scale(1);
+    }
+    10% {
+        transform: scale(1.1);
+    }
+    
+    20% {
+        transform: scale(1);
+    }
+}
+
+
+
+
+.cta-btn2{
+    background: #e37927;
+    float: right;
+    font-size: 25px;
+    padding: 8px 18px;
+    border-radius: 25px;
+    color: #1a0039 !important;
+    text-decoration: none !important;
+}
+.cta-btn2:hover {
+    background: #f48632;
+    animation: pulse 1s linear;
+    z-index: 1;
+}
+
+
+.linkImgBtn {
+    color: #333 !important;
+    border: 2px solid #eee;
+    margin: 5px 5px 0 5px;
+    width: 50%;
+    height: 250px;
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.linkImgBtn:hover {
+    animation: pulse 1s linear;
+    z-index: 1;
+}
+@media (max-width: 800px) {
+    .linkImgBtn {
+        width: 100%;
+    }
+}

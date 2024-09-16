@@ -1,0 +1,18 @@
+export const HOME = '/';
+export const BECOME_A_MEMBER = '/ecw/become-a-member';
+export const CONTACT_US = '/ecw/contact-us';
+export const HOLIDAY_SCHEDULE= '/ecw/holiday-schedule';
+export const LOAN_RATES = '/ecw/loan-rates';
+export const LOAN_APPLICATION = '/ecw/loan-application';
+export const DEPOSITE_RATES = '/ecw/deposite-rate';
+export const CHECKING_ACCOUNTS = '/ecw/checking-accounts';
+export const CREDIT_CARDS = '/ecw/credit-card';
+export const CU_SERVICE = '/ecw/cu-services';
+export const ATM_LOCATOR = '/ecw/atm-locators';
+export const CALCULATOR = '/ecw/calculator';
+export const MAIN_CALCULATOR = '/ecw/cal';
+export const PROMOTION = '/ecw/promotions';
+export const SITE_MAP = '/ecw/site-map';
+export const BECOME_A_MEMBER_FORM = '/ecw/signupform';
+export const SUCCESS_LOAN_FORM = '/ecw/secure-forms/loan-application-thanks';
+export const SEARCH_RESULT =  '/ecw/search-result?search-term=test';

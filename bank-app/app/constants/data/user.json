@@ -1,0 +1,840 @@
+{
+    "users":   [
+           {
+               "id": 1,
+               "transaction": [
+                   {
+                       "human": "Stock Transfer",
+                       "type": "credit",
+                       "amount": "$42,789.34",
+                       "date": "January 8th 2022",
+                       "time": "2:53 am"
+                   },
+                   {
+                       "human": "Wire Transfer",
+                       "type": "credit",
+                       "amount": "$150,000.00",
+                       "date": "January 8th 2022",
+                       "time": "2:53 am"
+                   },
+                   {
+                       "human": "Investment Payment",
+                       "type": "debit",
+                       "amount": "$72,415.62",
+                       "date": "January 8th 2022",
+                       "time": "2:53 am"
+                   },
+                   {
+                       "human": "Stock Transfer",
+                       "type": "credit",
+                       "amount": "$42,789.34",
+                       "date": "January 8th 2022",
+                       "time": "2:53 am"
+                   },
+                   {
+                       "human": "Tax Payment",
+                       "type": "debit",
+                       "amount": "$37,542.11",
+                       "date": "January 8th 2022",
+                       "time": "2:53 am"
+                   },
+                   {
+                       "human": "Stock Transfer",
+                       "type": "credit",
+                       "amount": "$42,789.34",
+                       "date": "January 8th 2022",
+                       "time": "2:53 am"
+                   },
+                   {
+                       "human": "Stock Transfer",
+                       "type": "credit",
+                       "amount": "$42,789.34",
+                       "date": "January 8th 2022",
+                       "time": "2:53 am"
+                   },
+                   {
+                       "human": "Stock Transfer",
+                       "type": "credit",
+                       "amount": "$42,789.34",
+                       "date": "January 8th 2022",
+                       "time": "2:53 am"
+                   },
+                   {
+                       "human": "Stock Transfer",
+                       "type": "credit",
+                       "amount": "$42,789.34",
+                       "date": "January 8th 2022",
+                       "time": "2:53 am"
+                   },
+                   {
+                       "human": "Stock Transfer",
+                       "type": "credit",
+                       "amount": "$42,789.34",
+                       "date": "January 8th 2022",
+                       "time": "2:53 am"
+                   }
+               ],
+   
+               "transactions": [
+                 {
+                   "id": 1,
+                   "date": "2023-12-10",
+                   "time": "06:55:18",
+                   "amount": "123.45",
+                   "type": "debit",
+                   "narration": "Withdrawal",
+                   "transactionRef": "REF123527"
+               },
+               {
+                   "id": 2,
+                   "date": "2023-11-30",
+                   "time": "20:22:55",
+                   "amount": "678.90",
+                   "type": "credit",
+                   "narration": "Transfer",
+                   "transactionRef": "REF123526"
+               },
+               {
+                   "id": 3,
+                   "date": "2023-10-22",
+                   "time": "13:45:33",
+                   "amount": "345.67",
+                   "type": "debit",
+                   "narration": "Refund",
+                   "transactionRef": "REF123525"
+               },
+               {
+                   "id": 4,
+                   "date": "2023-09-11",
+                   "time": "08:15:40",
+                   "amount": "543.21",
+                   "type": "credit",
+                   "narration": "Payment",
+                   "transactionRef": "REF123524"
+               },
+               {
+                   "id": 5,
+                   "date": "2023-08-03",
+                   "time": "17:35:22",
+                   "amount": "876.54",
+                   "type": "debit",
+                   "narration": "Deposit",
+                   "transactionRef": "REF123523"
+               },
+               {
+                   "id": 6,
+                   "date": "2023-07-29",
+                   "time": "11:24:15",
+                   "amount": "234.56",
+                   "type": "credit",
+                   "narration": "Withdrawal",
+                   "transactionRef": "REF123522"
+               },
+               {
+                   "id": 7,
+                   "date": "2023-06-21",
+                   "time": "09:45:30",
+                   "amount": "789.01",
+                   "type": "debit",
+                   "narration": "Transfer",
+                   "transactionRef": "REF123521"
+               },
+               {
+                   "id": 8,
+                   "date": "2023-05-18",
+                   "time": "15:30:48",
+                   "amount": "456.78",
+                   "type": "credit",
+                   "narration": "Refund",
+                   "transactionRef": "REF123520"
+               },
+               {
+                   "id": 9,
+                   "date": "2023-04-06",
+                   "time": "06:55:18",
+                   "amount": "123.45",
+                   "type": "debit",
+                   "narration": "Payment",
+                   "transactionRef": "REF123519"
+               },
+               {
+                   "id": 10,
+                   "date": "2023-03-25",
+                   "time": "20:22:55",
+                   "amount": "678.90",
+                   "type": "credit",
+                   "narration": "Deposit",
+                   "transactionRef": "REF123518"
+               },
+               {
+                   "id": 11,
+                   "date": "2023-02-14",
+                   "time": "13:45:33",
+                   "amount": "345.67",
+                   "type": "debit",
+                   "narration": "Withdrawal",
+                   "transactionRef": "REF123517"
+               },
+               {
+                   "id": 12,
+                   "date": "2023-01-23",
+                   "time": "08:15:40",
+                   "amount": "543.21",
+                   "type": "credit",
+                   "narration": "Transfer",
+                   "transactionRef": "REF123516"
+               },
+               {
+                   "id": 13,
+                   "date": "2022-12-14",
+                   "time": "17:35:22",
+                   "amount": "876.54",
+                   "type": "debit",
+                   "narration": "Payment",
+                   "transactionRef": "REF123515"
+               },
+               {
+                   "id": 14,
+                   "date": "2022-11-29",
+                   "time": "11:24:15",
+                   "amount": "234.56",
+                   "type": "credit",
+                   "narration": "Deposit",
+                   "transactionRef": "REF123514"
+               },
+               {
+                   "id": 15,
+                   "date": "2022-10-22",
+                   "time": "09:45:30",
+                   "amount": "789.01",
+                   "type": "debit",
+                   "narration": "Withdrawal",
+                   "transactionRef": "REF123513"
+               },
+               {
+                   "id": 16,
+                   "date": "2022-09-17",
+                   "time": "15:30:48",
+                   "amount": "456.78",
+                   "type": "credit",
+                   "narration": "Transfer",
+                   "transactionRef": "REF123512"
+               },
+               {
+                   "id": 17,
+                   "date": "2022-08-28",
+                   "time": "06:55:18",
+                   "amount": "123.45",
+                   "type": "debit",
+                   "narration": "Refund",
+                   "transactionRef": "REF123511"
+               },
+               {
+                   "id": 18,
+                   "date": "2022-07-19",
+                   "time": "20:22:55",
+                   "amount": "678.90",
+                   "type": "credit",
+                   "narration": "Payment",
+                   "transactionRef": "REF123510"
+               },
+               {
+                   "id": 19,
+                   "date": "2022-06-05",
+                   "time": "13:45:33",
+                   "amount": "345.67",
+                   "type": "debit",
+                   "narration": "Deposit",
+                   "transactionRef": "REF123509"
+               },
+               {
+                   "id": 20,
+                   "date": "2022-05-30",
+                   "time": "08:15:40",
+                   "amount": "543.21",
+                   "type": "credit",
+                   "narration": "Withdrawal",
+                   "transactionRef": "REF123508"
+               },
+               {
+                   "id": 21,
+                   "date": "2022-04-25",
+                   "time": "17:35:22",
+                   "amount": "876.54",
+                   "type": "debit",
+                   "narration": "Transfer",
+                   "transactionRef": "REF123507"
+               },
+               {
+                   "id": 22,
+                   "date": "2022-03-11",
+                   "time": "11:24:15",
+                   "amount": "234.56",
+                   "type": "credit",
+                   "narration": "Refund",
+                   "transactionRef": "REF123506"
+               },
+               {
+                   "id": 23,
+                   "date": "2022-02-20",
+                   "time": "09:45:30",
+                   "amount": "789.01",
+                   "type": "debit",
+                   "narration": "Payment",
+                   "transactionRef": "REF123505"
+               },
+               {
+                   "id": 24,
+                   "date": "2022-01-15",
+                   "time": "15:30:48",
+                   "amount": "456.78",
+                   "type": "credit",
+                   "narration": "Deposit",
+                   "transactionRef": "REF123504"
+               },
+               {
+                   "id": 25,
+                   "date": "2021-12-10",
+                   "time": "06:55:18",
+                   "amount": "123.45",
+                   "type": "debit",
+                   "narration": "Withdrawal",
+                   "transactionRef": "REF123503"
+               },
+               {
+                   "id": 26,
+                   "date": "2021-11-30",
+                   "time": "20:22:55",
+                   "amount": "678.90",
+                   "type": "credit",
+                   "narration": "Transfer",
+                   "transactionRef": "REF123502"
+               },
+               {
+                   "id": 27,
+                   "date": "2021-10-22",
+                   "time": "13:45:33",
+                   "amount": "345.67",
+                   "type": "debit",
+                   "narration": "Refund",
+                   "transactionRef": "REF123501"
+               },
+               {
+                   "id": 28,
+                   "date": "2021-09-11",
+                   "time": "08:15:40",
+                   "amount": "543.21",
+                   "type": "credit",
+                   "narration": "Payment",
+                   "transactionRef": "REF123500"
+               },
+               {
+                   "id": 29,
+                   "date": "2021-08-03",
+                   "time": "17:35:22",
+                   "amount": "876.54",
+                   "type": "debit",
+                   "narration": "Deposit",
+                   "transactionRef": "REF123499"
+               },
+               {
+                   "id": 30,
+                   "date": "2021-07-19",
+                   "time": "11:24:15",
+                   "amount": "234.56",
+                   "type": "credit",
+                   "narration": "Withdrawal",
+                   "transactionRef": "REF123498"
+               },
+               {
+                   "id": 31,
+                   "date": "2021-06-12",
+                   "time": "09:45:30",
+                   "amount": "789.01",
+                   "type": "debit",
+                   "narration": "Transfer",
+                   "transactionRef": "REF123497"
+               },
+               {
+                   "id": 32,
+                   "date": "2021-05-07",
+                   "time": "15:30:48",
+                   "amount": "456.78",
+                   "type": "credit",
+                   "narration": "Refund",
+                   "transactionRef": "REF123496"
+               },
+               {
+                   "id": 33,
+                   "date": "2021-04-01",
+                   "time": "06:55:18",
+                   "amount": "123.45",
+                   "type": "debit",
+                   "narration": "Payment",
+                   "transactionRef": "REF123495"
+               },
+               {
+                   "id": 34,
+                   "date": "2021-03-25",
+                   "time": "20:22:55",
+                   "amount": "678.90",
+                   "type": "credit",
+                   "narration": "Deposit",
+                   "transactionRef": "REF123494"
+               },
+               {
+                   "id": 35,
+                   "date": "2021-02-17",
+                   "time": "13:45:33",
+                   "amount": "345.67",
+                   "type": "debit",
+                   "narration": "Withdrawal",
+                   "transactionRef": "REF123493"
+               },
+               {
+                   "id": 36,
+                   "date": "2021-01-20",
+                   "time": "08:15:40",
+                   "amount": "543.21",
+                   "type": "credit",
+                   "narration": "Transfer",
+                   "transactionRef": "REF123492"
+               },
+               {
+                   "id": 37,
+                   "date": "2020-12-14",
+                   "time": "17:35:22",
+                   "amount": "876.54",
+                   "type": "debit",
+                   "narration": "Payment",
+                   "transactionRef": "REF123491"
+               },
+               {
+                   "id": 38,
+                   "date": "2020-11-29",
+                   "time": "11:24:15",
+                   "amount": "234.56",
+                   "type": "credit",
+                   "narration": "Deposit",
+                   "transactionRef": "REF123490"
+               },
+               {
+                   "id": 39,
+                   "date": "2020-10-22",
+                   "time": "09:45:30",
+                   "amount": "789.01",
+                   "type": "debit",
+                   "narration": "Withdrawal",
+                   "transactionRef": "REF123489"
+               },
+               {
+                   "id": 40,
+                   "date": "2020-09-17",
+                   "time": "15:30:48",
+                   "amount": "456.78",
+                   "type": "credit",
+                   "narration": "Transfer",
+                   "transactionRef": "REF123488"
+               },
+               {
+                   "id": 41,
+                   "date": "2020-08-28",
+                   "time": "06:55:18",
+                   "amount": "123.45",
+                   "type": "debit",
+                   "narration": "Refund",
+                   "transactionRef": "REF123487"
+               },
+               {
+                   "id": 42,
+                   "date": "2020-07-19",
+                   "time": "20:22:55",
+                   "amount": "678.90",
+                   "type": "credit",
+                   "narration": "Payment",
+                   "transactionRef": "REF123486"
+               },
+               {
+                   "id": 43,
+                   "date": "2020-06-05",
+                   "time": "13:45:33",
+                   "amount": "345.67",
+                   "type": "debit",
+                   "narration": "Deposit",
+                   "transactionRef": "REF123485"
+               },
+               {
+                   "id": 44,
+                   "date": "2020-05-30",
+                   "time": "08:15:40",
+                   "amount": "543.21",
+                   "type": "credit",
+                   "narration": "Withdrawal",
+                   "transactionRef": "REF123484"
+               },
+               {
+                   "id": 45,
+                   "date": "2020-04-25",
+                   "time": "17:35:22",
+                   "amount": "876.54",
+                   "type": "debit",
+                   "narration": "Transfer",
+                   "transactionRef": "REF123483"
+               },
+               {
+                   "id": 46,
+                   "date": "2020-03-11",
+                   "time": "11:24:15",
+                   "amount": "234.56",
+                   "type": "credit",
+                   "narration": "Refund",
+                   "transactionRef": "REF123482"
+               },
+               {
+                   "id": 47,
+                   "date": "2020-02-20",
+                   "time": "09:45:30",
+                   "amount": "789.01",
+                   "type": "debit",
+                   "narration": "Payment",
+                   "transactionRef": "REF123481"
+               },
+               {
+                   "id": 48,
+                   "date": "2020-01-15",
+                   "time": "15:30:48",
+                   "amount": "456.78",
+                   "type": "credit",
+                   "narration": "Deposit",
+                   "transactionRef": "REF123480"
+               },
+               {
+                   "id": 49,
+                   "date": "2019-12-10",
+                   "time": "06:55:18",
+                   "amount": "123.45",
+                   "type": "debit",
+                   "narration": "Withdrawal",
+                   "transactionRef": "REF123479"
+               },
+               {
+                   "id": 50,
+                   "date": "2019-11-30",
+                   "time": "20:22:55",
+                   "amount": "678.90",
+                   "type": "credit",
+                   "narration": "Transfer",
+                   "transactionRef": "REF123478"
+               },
+               {
+                   "id": 51,
+                   "date": "2019-10-22",
+                   "time": "13:45:33",
+                   "amount": "345.67",
+                   "type": "debit",
+                   "narration": "Refund",
+                   "transactionRef": "REF123477"
+               },
+               {
+                   "id": 52,
+                   "date": "2019-09-11",
+                   "time": "08:15:40",
+                   "amount": "543.21",
+                   "type": "credit",
+                   "narration": "Payment",
+                   "transactionRef": "REF123476"
+               },
+               {
+                   "id": 53,
+                   "date": "2019-08-03",
+                   "time": "17:35:22",
+                   "amount": "876.54",
+                   "type": "debit",
+                   "narration": "Deposit",
+                   "transactionRef": "REF123475"
+               },
+               {
+                   "id": 54,
+                   "date": "2019-07-19",
+                   "time": "11:24:15",
+                   "amount": "234.56",
+                   "type": "credit",
+                   "narration": "Withdrawal",
+                   "transactionRef": "REF123474"
+               },
+               {
+                   "id": 55,
+                   "date": "2019-06-12",
+                   "time": "09:45:30",
+                   "amount": "789.01",
+                   "type": "debit",
+                   "narration": "Transfer",
+                   "transactionRef": "REF123473"
+               },
+               {
+                   "id": 56,
+                   "date": "2019-05-07",
+                   "time": "15:30:48",
+                   "amount": "456.78",
+                   "type": "credit",
+                   "narration": "Refund",
+                   "transactionRef": "REF123472"
+               },
+               {
+                   "id": 57,
+                   "date": "2019-04-01",
+                   "time": "06:55:18",
+                   "amount": "123.45",
+                   "type": "debit",
+                   "narration": "Payment",
+                   "transactionRef": "REF123471"
+               },
+               {
+                   "id": 58,
+                   "date": "2019-03-25",
+                   "time": "20:22:55",
+                   "amount": "678.90",
+                   "type": "credit",
+                   "narration": "Deposit",
+                   "transactionRef": "REF123470"
+               },
+               {
+                   "id": 59,
+                   "date": "2019-02-17",
+                   "time": "13:45:33",
+                   "amount": "345.67",
+                   "type": "debit",
+                   "narration": "Withdrawal",
+                   "transactionRef": "REF123469"
+               },
+               {
+                   "id": 60,
+                   "date": "2019-01-20",
+                   "time": "08:15:40",
+                   "amount": "543.21",
+                   "type": "credit",
+                   "narration": "Transfer",
+                   "transactionRef": "REF123468"
+               },
+               {
+                   "id": 61,
+                   "date": "2018-12-14",
+                   "time": "17:35:22",
+                   "amount": "876.54",
+                   "type": "debit",
+                   "narration": "Payment",
+                   "transactionRef": "REF123467"
+               },
+               {
+                   "id": 62,
+                   "date": "2018-11-29",
+                   "time": "11:24:15",
+                   "amount": "234.56",
+                   "type": "credit",
+                   "narration": "Deposit",
+                   "transactionRef": "REF123466"
+               },
+               {
+                   "id": 63,
+                   "date": "2018-10-22",
+                   "time": "09:45:30",
+                   "amount": "789.01",
+                   "type": "debit",
+                   "narration": "Withdrawal",
+                   "transactionRef": "REF123465"
+               },
+               {
+                   "id": 64,
+                   "date": "2018-09-17",
+                   "time": "15:30:48",
+                   "amount": "456.78",
+                   "type": "credit",
+                   "narration": "Transfer",
+                   "transactionRef": "REF123464"
+               },
+               {
+                   "id": 65,
+                   "date": "2018-08-28",
+                   "time": "06:55:18",
+                   "amount": "123.45",
+                   "type": "debit",
+                   "narration": "Refund",
+                   "transactionRef": "REF123463"
+               },
+               {
+                   "id": 66,
+                   "date": "2018-07-19",
+                   "time": "20:22:55",
+                   "amount": "678.90",
+                   "type": "credit",
+                   "narration": "Payment",
+                   "transactionRef": "REF123462"
+               },
+               {
+                   "id": 67,
+                   "date": "2018-06-05",
+                   "time": "13:45:33",
+                   "amount": "345.67",
+                   "type": "debit",
+                   "narration": "Deposit",
+                   "transactionRef": "REF123461"
+               },
+               {
+                   "id": 68,
+                   "date": "2018-05-30",
+                   "time": "08:15:40",
+                   "amount": "543.21",
+                   "type": "credit",
+                   "narration": "Withdrawal",
+                   "transactionRef": "REF123460"
+               },
+               {
+                   "id": 69,
+                   "date": "2018-04-25",
+                   "time": "17:35:22",
+                   "amount": "876.54",
+                   "type": "debit",
+                   "narration": "Transfer",
+                   "transactionRef": "REF123459"
+               },
+               {
+                   "id": 70,
+                   "date": "2018-03-11",
+                   "time": "11:24:15",
+                   "amount": "234.56",
+                   "type": "credit",
+                   "narration": "Refund",
+                   "transactionRef": "REF123458"
+               },
+               {
+                   "id": 71,
+                   "date": "2018-02-20",
+                   "time": "09:45:30",
+                   "amount": "789.01",
+                   "type": "debit",
+                   "narration": "Payment",
+                   "transactionRef": "REF123457"
+               },
+               {
+                   "id": 72,
+                   "date": "2018-01-15",
+                   "time": "15:30:48",
+                   "amount": "456.78",
+                   "type": "credit",
+                   "narration": "Deposit",
+                   "transactionRef": "REF123456"
+               },
+               {
+                   "id": 73,
+                   "date": "2017-12-10",
+                   "time": "06:55:18",
+                   "amount": "123.45",
+                   "type": "debit",
+                   "narration": "Withdrawal",
+                   "transactionRef": "REF123455"
+               },
+               {
+                   "id": 74,
+                   "date": "2017-11-30",
+                   "time": "20:22:55",
+                   "amount": "678.90",
+                   "type": "credit",
+                   "narration": "Transfer",
+                   "transactionRef": "REF123454"
+               },
+               {
+                   "id": 75,
+                   "date": "2017-10-22",
+                   "time": "13:45:33",
+                   "amount": "345.67",
+                   "type": "debit",
+                   "narration": "Refund",
+                   "transactionRef": "REF123453"
+               },
+               {
+                   "id": 76,
+                   "date": "2017-09-11",
+                   "time": "08:15:40",
+                   "amount": "543.21",
+                   "type": "credit",
+                   "narration": "Payment",
+                   "transactionRef": "REF123452"
+               },
+               {
+                   "id": 77,
+                   "date": "2017-08-03",
+                   "time": "17:35:22",
+                   "amount": "876.54",
+                   "type": "debit",
+                   "narration": "Deposit",
+                   "transactionRef": "REF123451"
+               },
+               {
+                   "id": 78,
+                   "date": "2017-07-19",
+                   "time": "11:24:15",
+                   "amount": "234.56",
+                   "type": "credit",
+                   "narration": "Withdrawal",
+                   "transactionRef": "REF123450"
+               },
+               {
+                   "id": 79,
+                   "date": "2017-06-12",
+                   "time": "09:45:30",
+                   "amount": "789.01",
+                   "type": "debit",
+                   "narration": "Transfer",
+                   "transactionRef": "REF123449"
+               },
+               {
+                   "id": 80,
+                   "date": "2017-05-07",
+                   "time": "15:30:48",
+                   "amount": "456.78",
+                   "type": "credit",
+                   "narration": "Refund",
+                   "transactionRef": "REF123448"
+               },
+               {
+                   "id": 81,
+                   "date": "2017-04-01",
+                   "time": "06:55:18",
+                   "amount": "123.45",
+                   "type": "debit",
+                   "narration": "Payment",
+                   "transactionRef": "REF123447"
+               }
+   
+               ],
+   
+   
+   
+               "beneficiairy": [
+                 {
+                   "id": 1,
+                   "name": "J. Michael Anderson",
+                   "initial": "J",
+                   "accountNumber": "...4119",
+                   "bank": "American Express"
+                 },
+                 {
+                   "id": 2,
+                   "name": "Emily G. Smith",
+                   "initial": "E",
+                   "accountNumber": "...2089",
+                   "bank": "American Express"
+                 },
+                 {
+                   "id": 3,
+                   "name": "Christopher James Johnson",
+                   "initial": "C",
+                   "accountNumber": "...2234",
+                   "bank": "Key bank"
+                 }
+               ]
+           }
+       ]
+   }
+   
+   

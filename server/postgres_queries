@@ -1,0 +1,55 @@
+-- Create table queries
+CREATE TABLE customers (
+    CustomerID SERIAL PRIMARY KEY, -- ref1
+    LoginID VARCHAR(50) NOT NULL,
+    FirstName VARCHAR(50) NOT NULL,
+    LastName VARCHAR(50) NOT NULL,
+    MiddleName VARCHAR(50) NOT NULL,
+    DateOfBirth DATE NOT NULL,
+    Email VARCHAR(100) UNIQUE NOT NULL,
+    PhoneNumber VARCHAR(20) NOT NULL,
+    Address VARCHAR(255) NOT NULL,
+    City VARCHAR(50) NOT NULL,
+    State VARCHAR(50) NOT NULL,
+    PostalCode VARCHAR(20) NOT NULL,
+    Country VARCHAR(50) NOT NULL,
+    Gender VARCHAR(20)  NOT NULL,
+    BankVerificationNumber VARCHAR(50),
+    CURRENTTIMESTAMP TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+CREATE TABLE accounts (
+    AccountID SERIAL PRIMARY KEY, -- ref2
+    CustomerID INT REFERENCES Customers(CustomerID) ON DELETE CASCADE, -- ref1
+    AccountNumber VARCHAR(20) UNIQUE NOT NULL,
+    AccountType VARCHAR(20) CHECK (AccountType IN ('Individual', 'Joint')) NOT NULL,
+    Balance DECIMAL(15, 2) NOT NULL DEFAULT 0.00,
+    DateOpened DATE NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    HideBalance Boolean DEFAULT FALSE,
+    CURRENTTIMESTAMP TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+CREATE TABLE login_sessions (
+    id SERIAL PRIMARY KEY,
+    session_id VARCHAR(250) UNIQUE NOT NULL,
+    jwt_key 	VARCHAR(250) UNIQUE NOT NULL,
+    created_at TIMESTAMPTZ DEFAULT NOW(),
+    expires_at TIMESTAMPTZ
+);
+CREATE TABLE message_info (
+    MessageID SERIAL PRIMARY KEY,
+    AccountID INT REFERENCES Accounts(AccountID) ON DELETE CASCADE, -- ref2
+    InfoMessage VARCHAR(225) NOT NULL,
+    MessageCode INT CHECK (MessageCode IN (1, 2, 3)) NOT NULL, --1 good, 2 warning, 3 bad
+    CURRENTTIMESTAMP TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+
+-- Example user data (Make sure to replace <youremail@example.com> with your email address) 
+INSERT INTO customers ( LoginID, FirstName, LastName, MiddleName, DateOfBirth, Email, PhoneNumber, Address, City, State, PostalCode, Country, Gender, BankVerificationNumber) 
+VALUES ( 'EB08429480903', 'John', 'Doe', 'Gerrad', '1990-01-01', 'youremail@example.com', '123-456-7890', '123 Elm St', 'New York', 'NY', '10001', 'USA', 'Male', 'BVN123456789');
+
+INSERT INTO accounts (CustomerID, AccountNumber, AccountType, Balance, DateOpened, HideBalance, CURRENTTIMESTAMP)
+VALUES (1, '1234567890', 'Individual', 1500.50, '2023-08-01', false, CURRENT_TIMESTAMP);
+
+INSERT INTO message_info (AccountID, InfoMessage, MessageCode, CURRENTTIMESTAMP)
+VALUES (1, 'We require you to complete a routine bank visit', 3, CURRENT_TIMESTAMP);
+

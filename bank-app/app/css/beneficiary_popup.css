@@ -1,0 +1,195 @@
+@media (min-width: 576px){
+    .modal-dialog-scrollable .modal-content {
+        max-height: calc(100vh - 3.5rem);
+    }
+}
+.modal-dialog-scrollable .modal-content {
+    max-height: calc(100vh - 1rem);
+    overflow: hidden;
+}
+.modal-content {
+    margin: auto;
+    box-shadow: none;
+    border-radius: 6px;
+    border: 0 !important;
+    overflow: hidden;
+    background: #fff;
+}
+.modal-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    outline: 0;
+}
+
+
+
+
+.modal-dialog-scrollable .modal-footer, .modal-dialog-scrollable .modal-header {
+    flex-shrink: 0;
+}
+.modal-content>div, .modal-header~div {
+    overflow-y: auto;
+}
+.modal-header {
+    border-bottom: 0;
+}
+.modal-header {
+    border: 0;
+}
+.p-0 {
+    padding: 0 !important;
+}
+.modal-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+
+
+
+.funds-beneficiaries-header{
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    border-top-left-radius: calc(0.3rem - 1px) ;
+    border-top-right-radius: calc(0.3rem - 1px) ;
+    border-bottom: 1px solid #eee;
+    padding: 1rem 1rem;
+
+
+}
+
+
+.btn-beneficiaries-funds.close {
+    border: none !important;
+    background-color: initial !important;
+    font-size: 34px;
+    font-weight: 900;
+    z-index: 1000;
+    color: #d1a23c !important;
+    text-shadow: 0 1px 0 #d1a23c;
+    opacity: 1 !important;
+}
+
+@media (min-width: 576px) {
+    .funds-beneficiaries-header{
+        padding: 1rem 3rem;
+    } 
+}
+
+.funds-ben-header-h6{
+    margin: 5px 0 0;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: 1px;
+    color: #37474f;
+}
+.funds-beneficiaries-body{
+    width: 100%;
+    overflow-y: auto;
+    position: relative;
+    flex: 1 1 auto;
+    padding: 1rem;
+}
+
+
+
+.funds-beneficiaries-search {
+    background-image: url(/public/imgs/nav-icons/search.svg);
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center left 0.75rem;
+    background-size: 20px 20px;
+    padding-left: 45px;
+
+    font-size: 13px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: hsla(0, 0%, 98%, .7607843137254902);
+    border: 1px solid #eaecf0;
+    border-radius: 15px;
+    box-shadow: none;
+    outline: none;
+    transition: all .3s linear;
+
+    display: block;
+    height: calc(1.5em + 0.75rem + 2px);
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+
+    overflow: visible;
+}
+
+.funds-beneficiaries-h6{
+    margin-top: 3rem;
+    font-size: 18px;
+    text-align: center;
+    letter-spacing: 0.5px;
+    color: #9ba6af;
+    text-transform: capitalize;
+}
+
+
+
+.funds-beneficiaries-mint-row {
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+    padding: 12px 5px 12px 0;
+    cursor: pointer;
+}
+.block-circle, .vertical-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.funds-beneficiaries-block-circle {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: .02em;
+    color: #69747a;
+    width: 36px;
+    height: 36px;
+    left: 358px;
+    top: 1373px;
+    text-align: center;
+    background: #faf5eb;
+    border-radius: 50%;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mr-3, .mx-3 {
+    margin-right: 1rem !important;
+}
+.funds-beneficiaries-taylor h6 {
+    font-weight: 500;
+    font-size: 13px;
+    color: #37474f;
+    text-align: left;
+}
+.funds-beneficiaries-taylor p {
+    font-size: 12px;
+    line-height: 18px;
+    color: #69747a;
+}
+.funds-beneficiaries-right-side {
+    margin-left: auto;
+    text-align: right;
+}
+
+.funds-beneficiaries-mint-row:hover  .funds-beneficiaries-right-side-h6{
+    color: #d1a23c !important;
+}

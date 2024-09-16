@@ -1,0 +1,30 @@
+@keyframes fadeup {
+    from {
+      opacity: 0;
+      transform: translate3d(0, 100%, 0);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  
+  .fadeup-animation {
+    animation: fadeup 1s ease-in-out; /* Adjust animation duration and timing function */
+  }
+  .animated {
+    opacity: 0;
+    animation-duration: 1s;
+    animation-delay: 0.4s;
+    animation-fill-mode: both;
+  }
+
+
+#logoFixed{
+  height: 60px;
+  transition: all 0.3s linear;
+}
+#logoUnfixed{
+  height: 100%;
+  transition: all 0.3s linear;
+}

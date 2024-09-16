@@ -1,0 +1,36 @@
+.cancel_btn_holder{
+    text-align: right;
+    padding: 5px;
+    margin-right: 15px;
+}
+
+.k-button {
+    border-radius: 4px;
+    border-color: #ceced2;
+    color: #515967;
+    background-color: #f3f3f4;
+    background-position: 50% 50%;
+    background-image: none, linear-gradient(to bottom, rgba(255, 255, 255, .45) 0, rgba(255, 255, 255, 0) 100%);
+}
+
+
+.k-button {
+    margin: 0;
+    padding: 4px 14px;
+    box-sizing: border-box;
+    border-width: 1px;
+    border-style: solid;
+    background-repeat: repeat-x;
+    font: inherit;
+    line-height: 1.72em;
+    text-align: center;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    overflow: hidden;
+    user-select: none;
+    cursor: pointer;
+    outline: 0;
+}
