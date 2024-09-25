@@ -3,7 +3,6 @@ package auth
 import (
 	"bank-app-server/pkgs/config"
 	"bank-app-server/pkgs/utils"
-	"encoding/json"
 	"net/http"
 	"os"
 
@@ -57,11 +56,5 @@ func CreateLoginSessionCookie(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// Prepare a JSON response indicating success and the redirect URL.
-	response := map[string]string{
-		"status":   "success",
-		"redirect": os.Getenv("BANK_APP_DOMAIN"),
-	}
-	w.Header().Set("Content-Type", "application/json")
-	json.NewEncoder(w).Encode(response)
+	config.GetDashBoardData(userLoginID, w)
 }

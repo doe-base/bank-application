@@ -7,13 +7,6 @@ import ReactInput from 'input-format/react'
 
 interface Props {
     classes: any;
-    applicantName3: string;
-    setApplicantName3: React.Dispatch<React.SetStateAction<string>>
-    applicantName3Bool: boolean;
-    driverLicense3: string;
-    setDriverLicense3: React.Dispatch<React.SetStateAction<string>>
-    driverLicenseState3: string;
-    setDriverLicenseState3: React.Dispatch<React.SetStateAction<string>>
     socialSecurity3: string;
     setSocialSecurity3: any
     socialSecurity3Bool: boolean;
@@ -74,13 +67,6 @@ interface Props {
 
 const FieldSet3: React.FC<Props> = ({   
     classes, 
-    applicantName3,
-    setApplicantName3,
-    applicantName3Bool,
-    driverLicense3,
-    setDriverLicense3,
-    driverLicenseState3,
-    setDriverLicenseState3,
     socialSecurity3,
     setSocialSecurity3,
     socialSecurity3Bool,
@@ -165,110 +151,6 @@ const FieldSet3: React.FC<Props> = ({
 
                 <Grid container style={{marginBottom: '2rem'}}>
                     <Grid item xs={12} md={6} className={classes.gridItemPaddingWT}>
-
-                        <Grid container className={classes.gridContaineerResponsive}>
-                            <Grid item xs={12} md={5} className={classes.gridItemPadding}>
-                                <label htmlFor="applicant_name" className={classes.labelResponsiveStyle}><strong className={classes.strong}>Applicant's Name:</strong></label>
-                            </Grid>
-                            <Grid item xs={12} md={7} className={classes.gridItemPadding}>
-                                <span className={classes.val}>
-                                    <input 
-                                            id="applicant_name" 
-                                            type="text" 
-                                            name="applicant_name" 
-                                            className={classes.inputStyle1}
-                                            value={applicantName3} 
-                                            onChange={(event)=> setApplicantName3(event.currentTarget.value)} 
-                                    />
-                                    {applicantName3Bool ? <div id="loantype-error" className="error">This field is required.</div> : null}
-                                </span>
-                            </Grid>
-                        </Grid>
-
-                        <Grid container className={classes.gridContaineerResponsive}>
-                            <Grid item xs={12} md={5} className={classes.gridItemPadding}>
-                                <label htmlFor="driver_license" className={classes.labelResponsiveStyle}><strong className={classes.strong}>Driver License #:</strong></label>
-                            </Grid>
-                            <Grid item xs={12} md={7} className={classes.gridItemPadding}>
-                                <span className={classes.val}>
-                                    <input 
-                                        id="driver_license" 
-                                        type="text" 
-                                        name="driver_license" 
-                                        className={classes.inputStyle1} 
-                                        value={driverLicense3} 
-                                        onChange={(event)=> setDriverLicense3(event.currentTarget.value)} 
-                                    />
-                                </span>
-                            </Grid>
-                        </Grid>
-
-                        <Grid container className={classes.gridContaineerResponsive}>
-                            <Grid item xs={12} md={5}>
-                                <label htmlFor="dl_state"  className={classes.labelResponsiveStyle}><strong className={classes.strong}>Drivers License State:</strong></label>
-                            </Grid>
-                            <Grid item xs={12} md={7} className={classes.gridItemPadding}>
-                                <select 
-                                    id='driver_license_state'
-                                    className={classes.inputStyle1} 
-                                    value={driverLicenseState3}
-                                    onChange={(event)=> setDriverLicenseState3(event.currentTarget.value)}
-                                >
-                                    <option defaultValue=''>Select...</option>
-                                    <option value="AL">AL</option>
-                                    <option value="AK">AK</option>
-                                    <option value="AZ">AZ</option>
-                                    <option value="AR">AR</option>
-                                    <option value="CA">CA</option>
-                                    <option value="CO">CO</option>
-                                    <option value="CT">CT</option>
-                                    <option value="DC">DC</option>
-                                    <option value="DE">DE</option>
-                                    <option value="FL">FL</option>
-                                    <option value="GA">GA</option>
-                                    <option value="HI">HI</option>
-                                    <option value="ID">ID</option>
-                                    <option value="IL">IL</option>
-                                    <option value="IN">IN</option>
-                                    <option value="IA">IA</option>
-                                    <option value="KS">KS</option>
-                                    <option value="KY">KY</option>
-                                    <option value="LA">LA</option>
-                                    <option value="ME">ME</option>
-                                    <option value="MD">MD</option>
-                                    <option value="MA">MA</option>
-                                    <option value="MI">MI</option>
-                                    <option value="MN">MN</option>
-                                    <option value="MS">MS</option>
-                                    <option value="MO">MO</option>
-                                    <option value="MT">MT</option>
-                                    <option value="NE">NE</option>
-                                    <option value="NV">NV</option>
-                                    <option value="NH">NH</option>
-                                    <option value="NJ">NJ</option>
-                                    <option value="NM">NM</option>
-                                    <option value="NY">NY</option>
-                                    <option value="NC">NC</option>
-                                    <option value="ND">ND</option>
-                                    <option value="OH">OH</option>
-                                    <option value="OK">OK</option>
-                                    <option value="OR">OR</option>
-                                    <option value="PA">PA</option>
-                                    <option value="RI">RI</option>
-                                    <option value="SC">SC</option>
-                                    <option value="SD">SD</option>
-                                    <option value="TN">TN</option>
-                                    <option value="TX">TX</option>
-                                    <option value="UT">UT</option>
-                                    <option value="VT">VT</option>
-                                    <option value="VA">VA</option>
-                                    <option value="WA">WA</option>
-                                    <option value="WV">WV</option>
-                                    <option value="WI">WI</option>
-                                    <option value="WY">WY</option>
-                                </select>
-                            </Grid>
-                        </Grid>
 
                         <Grid container className={classes.gridContaineerResponsive}>
                             <Grid item xs={12} md={5} className={classes.gridItemPadding}>
@@ -558,56 +440,14 @@ const FieldSet3: React.FC<Props> = ({
                                     {zipcodeBool ? <div id="loantype-error" className="error">This field is required.</div> : null}
                                 </span>
                             </Grid>
-                        </Grid>
-
-                        <Grid container className={classes.gridContaineerResponsive}>
-                            <Grid item xs={12} md={5}>
-                                <label htmlFor="address_since"  className={classes.labelResponsiveStyle}><strong className={classes.strong}>Current Address since:</strong></label>
-                            </Grid>
-                            <Grid item xs={12} md={7} className={classes.gridItemPadding}>
-                                {/* <span className={classes.val}><input type="date" name="address_since" id="address_since" className={classes.inputStyle1} required/></span> */}
-                                <span className={classes.val}>
-                                    <ReactInput
-                                        id='address_since'
-                                        placeholder='MM/YYYY'
-                                        value={currentAddressSince}
-                                        onChange={setCurrentAddressSince}
-                                        parse={parse22}
-                                        format={dateFormat2}
-                                        className={classes.inputStyle1}
-                                    />
-                                    {currentAddressSinceBool ? <div id="loantype-error" className="error">This field is required.</div> : null}
-                                </span>
-                            
-                            </Grid>
-                        </Grid>
-
-                        <Grid container className={classes.gridContaineerResponsive}>
-                            <Grid item xs={12} style={{paddingTop: '8px'}}>
-                                <label htmlFor="less_than" style={{display: 'inline-block', width: '100%', textAlign: 'left'}}><strong className={classes.strong}>If less than 3 yrs enter previous address:</strong></label>
-                            </Grid>
-                            <Grid item xs={12}>
-                                <span className={classes.val}>
-                                    <input 
-                                        type="text" 
-                                        name="less_than" 
-                                        id="less_than" 
-                                        className={classes.inputStyle1} 
-                                        value={previousAddress}
-                                        onChange={(event)=>setPreviousAddress(event.currentTarget.value)}
-                                    />
-                                </span>
-                            </Grid>
-                        </Grid>
-                        
-                        
+                        </Grid>                        
 
                     </Grid>
                 </Grid>
 
 
                 <h3 className={classes.fieldsetH3}>Employment Information</h3>
-
+                <p className={classes.paragraph} style={{lineHeight: 1.3, margin: "15px 0 10px 0"}}><b>NOTE:</b> This section can be left blank</p>
                 <Grid container>
                     <Grid item xs={12} md={6} className={classes.gridItemPaddingWT}>
 
@@ -796,7 +636,6 @@ const FieldSet3: React.FC<Props> = ({
                     </Grid>
                 </Grid>
 
-                <p className={classes.paragraph} style={{lineHeight: 1.3, marginTop: '15px'}}><strong>NOTE:</strong> Alimony, child support, or separate maintenance income need not be revealed if You do not choose to have it considered as a basis for this credit request.</p>
             </fieldset>
         </>
     );

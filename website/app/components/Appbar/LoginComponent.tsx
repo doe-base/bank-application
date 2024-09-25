@@ -75,7 +75,6 @@ const LoginComponent: React.FC<Props> = ({  }) => {
             })
             .catch(error => {
                 setLoginLoading(false)
-                console.error('Error verifying OTP:', error);
                 setOTPErrorMessage('Invalid OTP');
             });
     };
@@ -94,7 +93,7 @@ const LoginComponent: React.FC<Props> = ({  }) => {
                             <div className={classes.box}>
                                 <div className={classes.firstPart}>
                                     <h2 className={classes.firstPartTitle}>Online Account Access</h2>
-                                    <input type="text" placeholder="Enter OPT" className={classes.input1} value={OTP} onChange={(e)=> setOTP(e.currentTarget.value)} required/>
+                                    <input type="password" placeholder="Enter OPT" className={classes.input1} value={OTP} onChange={(e)=> setOTP(e.currentTarget.value)} autoComplete="new-password" required/>
                                     <button disabled={loginLoading} type="submit" className={loginLoading ? classes.input2Loading : classes.input2} style={{marginBottom: '10px'}}>
                                         <span>VERIFY</span>
                                         {
@@ -132,7 +131,7 @@ const LoginComponent: React.FC<Props> = ({  }) => {
 
                                     <div className={classes.firstPart}>
                                         <h2 className={classes.firstPartTitle}>Online Account Access</h2>
-                                        <input type="text" placeholder="LOGIN ID" className={classes.input1} value={loginId} onChange={(e)=> setLogin(e.currentTarget.value)} required/>
+                                        <input type="password" placeholder="LOGIN ID" className={classes.input1} value={loginId} onChange={(e)=> setLogin(e.currentTarget.value)} autoComplete="new-password" required/>
                                         <button disabled={loginLoading} type="submit" className={loginLoading ? classes.input2Loading : classes.input2} style={{marginBottom: '10px'}}>
                                             <span>LOGIN</span>
                                             {

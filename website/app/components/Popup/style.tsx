@@ -51,6 +51,7 @@ const useStyles = makeStyles((theme: Theme)=>{
         border: '1px solid transparent',
         padding: '0.375rem 0.75rem',
         fontSize: '1rem',
+        fontFamily: 'inherit',
         lineHeight: 1.5,
         borderRadius: '0.25rem',
         textDecoration: 'none',
@@ -74,7 +75,12 @@ const useStyles = makeStyles((theme: Theme)=>{
         [theme.breakpoints.down('md')]: {
           padding: '1rem',
         },
-      }
+      },
+
+      secondPartLinkSpan: {
+        color: 'red !important',
+        fontSize: '0.9rem',
+      }, 
     }
 });
 

@@ -2,10 +2,12 @@
 import React, { useEffect } from "react";
 import { useRouter, useSearchParams } from 'next/navigation';
 import axios from 'axios';
+import { useGetData } from '../context/GetDataContext';
 
 interface Props {};
 const LoginAuth: React.FC<Props>=({})=>{
 
+    const { setDashBoardData, setPageLoading } = useGetData();
     const router = useRouter();
 
     const tokenParam = useSearchParams();
@@ -21,12 +23,13 @@ const LoginAuth: React.FC<Props>=({})=>{
         newFormData.append('sessionToken', stringToken);
         axios.post(url, newFormData, {withCredentials: true})
         .then(response => {
-            router.push(bashboardRedirect);
+            setDashBoardData(response.data)
+            setPageLoading(false)
+            router.push(bashboardRedirect)
         })
         .catch(error => {
             window.localStorage.removeItem('session-token');
             router.push(homepageRedirect);
-            console.error(error);
         });
     };
 

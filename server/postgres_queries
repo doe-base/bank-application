@@ -20,7 +20,7 @@ CREATE TABLE customers (
 CREATE TABLE accounts (
     AccountID SERIAL PRIMARY KEY, -- ref2
     CustomerID INT REFERENCES Customers(CustomerID) ON DELETE CASCADE, -- ref1
-    AccountNumber VARCHAR(20) UNIQUE NOT NULL,
+    AccountNumber VARCHAR(20) NOT NULL,
     AccountType VARCHAR(20) CHECK (AccountType IN ('Individual', 'Joint')) NOT NULL,
     Balance DECIMAL(15, 2) NOT NULL DEFAULT 0.00,
     DateOpened DATE NOT NULL DEFAULT CURRENT_TIMESTAMP,

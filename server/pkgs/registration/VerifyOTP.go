@@ -1,13 +1,14 @@
-package auth
+package registration
 
 import (
 	"bank-app-server/pkgs/config"
 	"bank-app-server/pkgs/utils"
-	"crypto/rand"
+	cryptoRand "crypto/rand"
 	"encoding/hex"
 	"encoding/json"
 	"fmt"
 	"io"
+	"math/rand"
 	"net/http"
 	"os"
 	"strconv"
@@ -61,18 +62,39 @@ func VerifyJWT(tokenString string) (string, error) {
 }
 func GenerateSessionID() (string, error) {
 	sessionID := make([]byte, 32)
-	if _, err := io.ReadFull(rand.Reader, sessionID); err != nil {
+	if _, err := io.ReadFull(cryptoRand.Reader, sessionID); err != nil {
 		return "", err
 	}
 	return hex.EncodeToString(sessionID), nil
+}
+func generateLoginID() string {
+	rand.Seed(time.Now().UnixNano())
+
+	prefix := "EB"
+
+	randomDigits := ""
+	for i := 0; i < 12; i++ {
+		randomDigits += fmt.Sprintf("%d", rand.Intn(10)) // Random digit between 0-9
+	}
+
+	// Combine prefix and random digits
+	return prefix + randomDigits
 }
 
 func VerifyOTP(w http.ResponseWriter, r *http.Request) {
 	utils.EnableCors(w, r)
 	go utils.CleanupExpiredSessions()
 
-	otp := r.FormValue("OTP")
-	loginID := r.FormValue("loginID")
+	otp := r.FormValue("otp")
+	firstName := r.FormValue("firstName")
+	lastName := r.FormValue("lastName")
+	middleName := r.FormValue("middleName")
+	email := r.FormValue("email")
+
+	if firstName == "" || lastName == "" || email == "" || otp == "" {
+		http.Error(w, "Token is required", http.StatusBadRequest)
+		return
+	}
 
 	// verify code isn't expired
 	expirationDuration := 10 * time.Minute
@@ -82,6 +104,22 @@ func VerifyOTP(w http.ResponseWriter, r *http.Request) {
 	}
 
 	if otp == strconv.Itoa(OTPTokenObject.Code) {
+		loginID := generateLoginID()
+		err := config.CreateNewCustomer(loginID, firstName, lastName, middleName, email)
+		if err != nil {
+			fmt.Println(err)
+			http.Error(w, "Error creating user", http.StatusInternalServerError)
+			return
+		}
+
+		// Send the user's LoginID via email
+		err2 := SendLoginIDMail(loginID, email, firstName)
+		if err2 != nil {
+			fmt.Println(err2)
+			http.Error(w, "Internal server erro", http.StatusInternalServerError)
+			return
+		}
+
 		jwtKey, err := generateJWT(loginID)
 		if err != nil {
 			http.Error(w, "Error generating token", http.StatusInternalServerError)

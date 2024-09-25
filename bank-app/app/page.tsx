@@ -22,6 +22,7 @@ const DashBoard: React.FC<Props> = ({}) => {
     document.title = `Dashboard | ${firstname ? `${firstname} ${lastname}` : ''}`;
   }, [dashboardData]);
 
+
   return (
     <>
       {pageLoading ? (

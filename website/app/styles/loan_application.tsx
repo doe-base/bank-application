@@ -552,6 +552,28 @@ const useStyles = makeStyles((theme: Theme)=>{
                 background: '#da823d'
             }
         },
+        disableSubmitBtn: {
+            padding: '10px 30px',
+            display: 'block',
+            width: '100%',
+            textAlign: 'center',
+            background: '#5c2e7d',
+            color: '#FFF',
+            fontSize: '14px',
+            fontWeight: 'bold',
+            fontFamily: 'inherit',
+            textTransform: 'uppercase',
+            marginBottom: 0,
+            whiteSpace: 'nowrap',
+            verticalAlign: 'middle',
+            touchAction: 'manipulation',
+            userSelect: 'none',
+            border: '1px solid transparent',
+            borderRadius: '4px',
+
+            opacity: '0.5',
+            cursor: 'not-allowed !important'
+        },
         gridItemPadding: {
             padding: '8px',
             [theme.breakpoints.down('md')]: {
@@ -597,7 +619,11 @@ const useStyles = makeStyles((theme: Theme)=>{
             [theme.breakpoints.down('md')]: {
                 marginTop: '0px',
             },
-        }
+        },
+        secondPartLinkSpan: {
+            color: 'red !important',
+            fontSize: '0.9rem',
+          }, 
     };
 });
 

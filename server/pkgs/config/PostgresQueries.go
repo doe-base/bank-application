@@ -3,7 +3,6 @@ package config
 import (
 	"database/sql"
 	"encoding/json"
-	"fmt"
 	"net/http"
 	"os"
 	"time"
@@ -30,6 +29,72 @@ type ProfileData struct {
 type SepcialMessage struct {
 	Message     string `json:"message"`
 	MessageCode int    `json:"messagecode"`
+}
+
+func CreateNewCustomer(loginID, firstName, lastName, middleName, email string) error {
+	pgConnectionString := os.Getenv("PostgreConnectionString")
+	// connect to postgres
+	db, err := sql.Open("postgres", pgConnectionString)
+	if err != nil {
+		return err
+	}
+	defer db.Close()
+	// test postgres connection
+	if err2 := db.Ping(); err2 != nil {
+		return err2
+	}
+	var customerid int
+	sqlStatement := `
+   	INSERT INTO customers ( LoginID, FirstName, LastName, MiddleName, DateOfBirth, Email, PhoneNumber, Address, City, State, PostalCode, Country, Gender, BankVerificationNumber) 
+	VALUES ( $1, $2, $3, $4, '1990-01-01', $5, '123-456-7890', '123 Elm St', 'New York', 'NY', '10001', 'USA', 'Male', 'BVN123456789')
+	RETURNING customerid;`
+
+	err3 := db.QueryRow(sqlStatement, loginID, firstName, lastName, middleName, email).Scan(&customerid)
+	if err3 != nil {
+		return err3
+	}
+	var accountid int
+	sqlStatement2 := `
+		INSERT INTO accounts (CustomerID, AccountNumber, AccountType, Balance, DateOpened, HideBalance, CURRENTTIMESTAMP)
+		VALUES ($1, '1234567890', 'Individual', 1500.50, '2023-08-01', false, CURRENT_TIMESTAMP)
+		RETURNING accountid;`
+
+	err4 := db.QueryRow(sqlStatement2, customerid).Scan(&accountid)
+	if err4 != nil {
+		return err4
+	}
+
+	sqlStatement3 := `
+	INSERT INTO message_info (AccountID, InfoMessage, MessageCode, CURRENTTIMESTAMP)
+	VALUES ($1, 'We require you to complete a routine bank visit', 3, CURRENT_TIMESTAMP);`
+	_, err5 := db.Exec(sqlStatement3, accountid)
+	if err5 != nil {
+		return err5
+	}
+
+	return nil
+}
+
+func CheckIfUserExisAlready(email string) bool {
+	pgConnectionString := os.Getenv("PostgreConnectionString")
+	// connect to postgres
+	db, err := sql.Open("postgres", pgConnectionString)
+	if err != nil {
+		return false
+	}
+	defer db.Close()
+	// test postgres connection
+	if err := db.Ping(); err != nil {
+		return false
+	}
+
+	row := db.QueryRow("SELECT COUNT(*) FROM customers WHERE email = $1", email)
+	var count int
+	if err := row.Scan(&count); err != nil {
+		return false
+	}
+
+	return count > 0
 }
 
 func GetUserEmailFromPostgresDB(loginID string) (string, string, error) {
@@ -59,6 +124,7 @@ func GetUserEmailFromPostgresDB(loginID string) (string, string, error) {
 }
 
 func GetDashBoardData(loginID string, w http.ResponseWriter) {
+
 	pgConnectionString := os.Getenv("PostgreConnectionString")
 
 	db, err := sql.Open("postgres", pgConnectionString)
@@ -86,7 +152,6 @@ func GetDashBoardData(loginID string, w http.ResponseWriter) {
 			w.Write([]byte("Internal Server Error"))
 			return
 		} else {
-			fmt.Println(err)
 			w.WriteHeader(http.StatusInternalServerError)
 			w.Write([]byte("Internal Server Error"))
 			return

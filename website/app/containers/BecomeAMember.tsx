@@ -2,8 +2,8 @@
 import React, { useEffect } from 'react';
 import Footer from '../components/Footer/Footer';
 import {useStyles, Hero, MainContent, } from '../styles/become_a_member';
-
-
+import {BECOME_A_MEMBER_FORM} from '../constants/routes'
+ 
 const BecomeAMemberContainer: React.FC = () => {
     const classes = useStyles();
 
@@ -72,7 +72,7 @@ const BecomeAMemberContainer: React.FC = () => {
                             </div>
 
                             <p className={classes.paragraph}>
-                                <a className={classes.linkBtn} style={{cursor: 'not-allowed'}}>Become a Member</a>
+                                <a className={classes.linkBtn} href={BECOME_A_MEMBER_FORM}>Become a Member</a>
                             </p>
 
                             <strong className={classes.strong}>Before your membership can be activated, the credit union must receive:</strong>

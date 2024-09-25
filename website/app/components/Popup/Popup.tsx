@@ -1,18 +1,26 @@
 import React, { useState } from 'react';
 import { RiCloseFill } from 'react-icons/ri';
 import useStyles from './style';
+import axios from 'axios';
+import { ThreeCircles } from 'react-loader-spinner';
 
 
 
 
-
+interface UserFormData{
+  email: string;
+  firstName: string;
+  lastName: string;
+  middleName: string;
+};
 interface Props{
     needed: boolean;
     setNeeded: React.Dispatch<React.SetStateAction<boolean>>;
     name: string;
     setName: React.Dispatch<React.SetStateAction<string>>;
+    userFormData: UserFormData | null;
 };
-const Popup: React.FC<Props> = ({needed, setNeeded, name, setName}) => {
+const Popup: React.FC<Props> = ({needed, setNeeded, name, setName, userFormData}) => {
   const classes = useStyles();
   const [d, setd] = useState(new Date());
 
@@ -21,6 +29,36 @@ const Popup: React.FC<Props> = ({needed, setNeeded, name, setName}) => {
     setName('')
   };
 
+  const [otp, setOtp] = useState('');
+  const [otpErrorMessage, setOTPErrorMessage] = useState('');
+  const [loading, setLoading] = useState(false);
+  const handleFormSubmit=(e: React.FormEvent<HTMLFormElement>)=>{
+    e.preventDefault()
+    setLoading(true)
+    setOTPErrorMessage('')
+
+    const url = process.env.NEXT_PUBLIC_REGISTRATION_OTP || ''
+    const formData = new FormData
+    formData.append('otp', otp)
+    formData.append('firstName', userFormData?.firstName || '');
+    formData.append('lastName', userFormData?.lastName || '');
+    formData.append('middleName', userFormData?.middleName || '');
+    formData.append('email', userFormData?.email || '');
+
+    axios.post(url, formData)
+    .then(response => {
+      setLoading(false)
+      window.location.replace(response.data.redirect_url);
+    })
+    .catch(error => {
+      setLoading(false)
+      if(error.response){
+        setOTPErrorMessage(error.response.data)
+      }else{
+        setOTPErrorMessage('Something went wrong')
+      };
+    })
+  };
 
   return (
     <div data-aos="zoom-in" data-aos-delay="0" data-aos-duration="100" className={`${needed ? 'sidebar-wrapper show' : 'sidebar-wrapper'}`}>
@@ -40,6 +78,42 @@ const Popup: React.FC<Props> = ({needed, setNeeded, name, setName}) => {
             <br />
 
               {
+                name === "enter-otp"
+                ?
+                <div>
+                    <ul className={classes.paragraph}>Verify your email. Enter the OPT sent to your email.</ul>
+                    <form onSubmit={handleFormSubmit}>
+                      <input type="password" autoComplete='new-password' onChange={(e)=> setOtp(e.currentTarget.value)}/>
+                    
+                      <div className={classes.footer}>
+                        <p style={{marginBottom: '10px'}}>
+                          <a style={{cursor: 'pointer', color: '#000', lineHeight: '1', fontSize: '0.897rem'}} role="button" onClick={closePopup}>No Thanks</a> 
+                          <button type='submit' className={classes.linkButton}>Verify</button>
+                        </p>
+                        {
+                              loading
+                              ?                                           
+                              <div>
+                                  <ThreeCircles
+                                      visible={true}
+                                      height="20"
+                                      width="20"
+                                      color="#4fa94d"
+                                      ariaLabel="three-circles-loading"
+                                      wrapperStyle={{}}
+                                      wrapperClass=""
+                                  />
+                              </div>
+                              :null
+                          }
+                      </div>
+                          <span className={classes.secondPartLinkSpan}>{otpErrorMessage}</span>
+                    </form>
+
+
+                </div>
+                :
+
                 name === "checking_accounts_less"
                 ?
                 <div>

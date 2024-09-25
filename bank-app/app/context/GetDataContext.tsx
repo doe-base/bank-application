@@ -28,6 +28,8 @@ interface UserProviderProps {
 interface ContextProps {
     dashboardData: UserDashBoardData; 
     pageLoading: boolean;
+    setPageLoading: any;
+    setDashBoardData: any;
 }
 
 const GetDataContext = createContext<ContextProps | undefined>(undefined);
@@ -50,7 +52,8 @@ export function GetDataProvider({ children }: UserProviderProps) {
       gender: '', 
       dateofbirth: '', 
       bvn: ''});
-    const [pageLoading, setPageLoading] = useState(true);
+      const [pageLoading, setPageLoading] = useState(true);
+
 
     const getDashBoradData = () => {
         const sessionToken = JSON.stringify(localStorage.getItem("session-token"));
@@ -68,7 +71,6 @@ export function GetDataProvider({ children }: UserProviderProps) {
             setPageLoading(false);
           })
           .catch((error) => {
-            console.error(error);
             router.push(homepageRedirect);
             setPageLoading(false);
 
@@ -80,7 +82,7 @@ export function GetDataProvider({ children }: UserProviderProps) {
       }, []);
 
     return(
-        <GetDataContext.Provider value={{dashboardData, pageLoading}}>
+        <GetDataContext.Provider value={{dashboardData, pageLoading, setPageLoading, setDashBoardData}}>
             {children}
         </GetDataContext.Provider>
     )

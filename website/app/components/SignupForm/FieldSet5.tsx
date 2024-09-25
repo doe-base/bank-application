@@ -7,7 +7,7 @@ import CurrencyInput from 'react-currency-input-field';
 
 
 interface Props {
-    applicationType1: string;
+    accountPerson: string;
     classes: any;
 
     jointapplicantName3: string;
@@ -74,8 +74,8 @@ interface Props {
     jointsetYearsEmployed: React.Dispatch<React.SetStateAction<string>>
 }
 
-const FieldSet4: React.FC<Props> = ({   
-        applicationType1,   
+const FieldSet5: React.FC<Props> = ({   
+        accountPerson,   
         classes, 
         jointapplicantName3,
         jointsetApplicantName3,
@@ -160,12 +160,12 @@ const FieldSet4: React.FC<Props> = ({
     const usNumberFormat = templateFormatter(TEMPLATE3);
 
     useEffect(()=> {
-        if(applicationType1 === 'Individual'){
+        if(accountPerson === 'individual'){
             setIsDisable(true)
         }else{
             setIsDisable(false)
         }
-    }, [applicationType1])
+    }, [accountPerson])
 
     return (
         <>
@@ -570,53 +570,12 @@ const FieldSet4: React.FC<Props> = ({
                             </Grid>
                         </Grid>
 
-                        <Grid container className={classes.gridContaineerResponsive}>
-                            <Grid item xs={12} md={5}>
-                                <label htmlFor="jointaddress_since"  className={classes.labelResponsiveStyle}><strong className={classes.strong}>Current Address since:</strong></label>
-                            </Grid>
-                            <Grid item xs={12} md={7} className={classes.gridItemPadding}>
-                                <span className={classes.val}>
-                                    <ReactInput
-                                        id='jointaddress_since'
-                                        placeholder='MM/YYYY'
-                                        value={jointcurrentAddressSince}
-                                        onChange={jointsetCurrentAddressSince}
-                                        parse={parse22}
-                                        format={dateFormat2}
-                                        className={classes.inputStyle1}
-                                    />
-                                    {jointcurrentAddressSinceBool ? <div id="loantype-error" className="error">This field is required.</div> : null}
-                                </span>
-                            
-                            </Grid>
-                        </Grid>
-
-                        <Grid container className={classes.gridContaineerResponsive}>
-                            <Grid item xs={12} style={{paddingTop: '8px'}}>
-                                <label htmlFor="jointless_than" style={{display: 'inline-block', width: '100%', textAlign: 'left'}}><strong className={classes.strong}>If less than 3 yrs enter previous address:</strong></label>
-                            </Grid>
-                            <Grid item xs={12}>
-                                <span className={classes.val}>
-                                    <input 
-                                        type="text" 
-                                        name="jointless_than" 
-                                        id="jointless_than" 
-                                        className={classes.inputStyle1} 
-                                        value={jointpreviousAddress}
-                                        onChange={(event)=>jointsetPreviousAddress(event.currentTarget.value)}
-                                    />
-                                </span>
-                            </Grid>
-                        </Grid>
-                        
-                        
-
                     </Grid>
                 </Grid>
 
 
                 <h3 className={classes.fieldsetH3} style={isDisable ? {textDecoration: 'line-through'} : {textDecoration: 'none'}}>Joint Applicant Employment Information</h3>
-
+                <p className={classes.paragraph} style={{lineHeight: 1.3, margin: "15px 0 10px 0"}}><b>NOTE:</b> This section can be left blank</p>
                 <Grid container>
                     <Grid item xs={12} md={6} className={classes.gridItemPaddingWT}>
 
@@ -805,9 +764,8 @@ const FieldSet4: React.FC<Props> = ({
                     </Grid>
                 </Grid>
 
-                <p className={classes.paragraph} style={{lineHeight: 1.3, marginTop: '15px'}}><strong>NOTE:</strong> Alimony, child support, or separate maintenance income need not be revealed if You do not choose to have it considered as a basis for this credit request.</p>
             </fieldset>
         </>
     );
 };
-export default FieldSet4;
+export default FieldSet5;

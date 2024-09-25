@@ -13,6 +13,6 @@ export const CALCULATOR = '/ecw/calculator';
 export const MAIN_CALCULATOR = '/ecw/cal';
 export const PROMOTION = '/ecw/promotions';
 export const SITE_MAP = '/ecw/site-map';
-export const BECOME_A_MEMBER_FORM = '/ecw/signupform';
+export const BECOME_A_MEMBER_FORM = '/ecw/signup-form';
 export const SUCCESS_LOAN_FORM = '/ecw/secure-forms/loan-application-thanks';
 export const SEARCH_RESULT =  '/ecw/search-result?search-term=test';

@@ -4,7 +4,6 @@ import (
 	"bank-app-server/pkgs/config"
 	"bank-app-server/pkgs/utils"
 	"encoding/json"
-	"fmt"
 	"net/http"
 )
 
@@ -24,7 +23,6 @@ func HandleLogin(w http.ResponseWriter, r *http.Request) {
 	}
 
 	email, message, err := config.GetUserEmailFromPostgresDB(loginID)
-	fmt.Println(message)
 	if err != nil {
 		if message == "No rows were returned!" {
 			response := ErrorResponse{LoginIDNotFound: true, OTPInvalid: false}
