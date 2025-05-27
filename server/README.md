@@ -22,7 +22,7 @@ The server is a Golang-based backend that handles requests from the client appli
 
 
 ## Folder Structure
-server/
+`server/
 │
 ├── cmd/                     # Main source folder
 |   ├── main.go/             # Main entry file
@@ -35,7 +35,7 @@ server/
 ├── .env                     # Environment variables (e.g., postgres connection string)
 ├── go.mod                   # Defines the dependencies of Go project and their versions
 ├── go.sum                   # Stores the checksums of the downloaded dependencies.
-└── postgres_queries         # This file provides the Postgre SQL statements required to set up and use the application.
+└── postgres_queries         # This file provides the Postgre SQL statements required to set up and use the application.`
 
 
 

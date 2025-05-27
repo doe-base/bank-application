@@ -274,3 +274,42 @@ func DeleteSession(session string, w http.ResponseWriter) {
 		return
 	}
 }
+
+
+func Create() error {
+	pgConnectionString := os.Getenv("PostgreConnectionString")
+
+	// Connect to PostgreSQL
+	db, err := sql.Open("postgres", pgConnectionString)
+	if err != nil {
+		return err
+	}
+	defer db.Close()
+
+	// Test connection
+	if err := db.Ping(); err != nil {
+		return err
+	}
+
+	// Define SQL as a string
+	sqlStatement := `
+		CREATE TABLE accounts (
+		    AccountID SERIAL PRIMARY KEY, -- ref2
+		    CustomerID INT REFERENCES Customers(CustomerID) ON DELETE CASCADE, -- ref1
+		    AccountNumber VARCHAR(20) NOT NULL,
+		    AccountType VARCHAR(20) CHECK (AccountType IN ('Individual', 'Joint')) NOT NULL,
+		    Balance DECIMAL(15, 2) NOT NULL DEFAULT 0.00,
+		    DateOpened DATE NOT NULL DEFAULT CURRENT_TIMESTAMP,
+		    HideBalance Boolean DEFAULT FALSE,
+		    CURRENTTIMESTAMP TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+		);`
+
+	// Execute SQL
+	_, err = db.Exec(sqlStatement)
+	if err != nil {
+		return err
+	}
+
+	return nil
+}
+

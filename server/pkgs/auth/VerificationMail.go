@@ -41,7 +41,7 @@ func SendVerificationMail(w http.ResponseWriter, userMail string) {
 	m.SetHeader("Subject", "Authentication code")
 	m.SetBody("text/html", "Use the code below to authenticate login session. Note that this code will become invalid after 10 minutes <br></br> <h1>"+strconv.Itoa(OTPTokenObject.Code)+"</h1> <br></br><br></br> If you didn't initiate a login on your account, kindly delete this message. Thank you. Elite Banking Community support team.")
 
-	d := mail.NewDialer(os.Getenv("EMAIL_HOST"), 465, os.Getenv("SENDER_MAIL"), os.Getenv("APP_PASSWORD"))
+	d := mail.NewDialer(os.Getenv("EMAIL_HOST"), 587, os.Getenv("SENDER_MAIL"), os.Getenv("APP_PASSWORD"))
 	d.StartTLSPolicy = mail.MandatoryStartTLS
 
 	if err := d.DialAndSend(m); err != nil {
